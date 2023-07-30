@@ -1,6 +1,7 @@
 from legalzard.legalzard import Legalzard
+api_key = "180a1e2b-4b5d-42ce-a711-10a1d1bd51ae"#os.environ["API_KEY"]
 
-legal = Legalzard()
+legal = Legalzard(api_key)
 
 data = {
              "license_name": "Marvin's Test",
@@ -131,5 +132,5 @@ data = {
              ]
          }
 
-#print(legal.create(data, check_compatibility=True))
-print(legal.get_all())
+print(legal.create(data, check_compatibility=True))
+#print(legal.get_all())

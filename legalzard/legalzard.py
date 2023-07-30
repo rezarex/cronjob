@@ -4,13 +4,13 @@ import os
 import requests
 from requests.structures import CaseInsensitiveDict
 LEGALZARD_API = 'https://100080.pythonanywhere.com/api/public/licenses/'
-api_key = os.environ["API_KEY"]
+#api_key = "180a1e2b-4b5d-42ce-a711-10a1d1bd51ae"#os.environ["API_KEY"]
 
 class Legalzard:
     headers = CaseInsensitiveDict()
    
 
-    def __init__(self):
+    def __init__(self, api_key):
         self.headers['API-KEY'] = api_key
 
     def _response(self, request, check_compatibility=False):
@@ -44,8 +44,8 @@ class Legalzard:
         :param data: A list of licenses.
 
         """
-        #return self._response(requests.get(url=LEGALZARD_API, headers=self.headers))
-        return requests.get(url=LEGALZARD_API, headers=self.headers)
+        return self._response(requests.get(url=LEGALZARD_API, headers=self.headers))
+        #return requests.get(url=LEGALZARD_API, headers=self.headers)
 
     def create(self, license: dict, check_compatibility=False):
         """

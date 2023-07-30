@@ -1,9 +1,10 @@
 import json
+import os
 
 import requests
 from requests.structures import CaseInsensitiveDict
 LEGALZARD_API = 'https://100080.pythonanywhere.com/api/public/licenses/'
-api_key = "180a1e2b-4b5d-42ce-a711-10a1d1bd51ae"
+api_key = os.environ["API_KEY"]
 
 class Legalzard:
     headers = CaseInsensitiveDict()
